@@ -1,0 +1,26 @@
+micronaut:
+  application:
+    name: natsSub
+  server:
+    port: 8085
+
+
+cassandra:
+  default:
+    basic:
+      contact-points:
+        - 127.0.0.1:9042
+      session-keyspace: produto
+      load-balancing-policy:
+        local-datacenter: datacenter1
+
+## Health
+endpoints:
+  health:
+    enabled: true
+
+## Nats
+nats:
+  addresses: ${nats_address:localhost}:4223
+  username: ${nats_username:guest}
+  password: ${nats_password:guest}
